@@ -25,5 +25,19 @@ export default StyleSheet.create({
     },
     profileName:{
         color: "#48d1cc"
-    }
+    },
+
+    Image2:{
+        width:"100%",
+        height:"60%",
+        marginTop:20,
+    },
+    Image2Container:{
+        alignItems:"center",
+        width:"100%",
+        padding:20,
+        borderRadius:10,
+        backgroundColor:"white",
+        marginTop:50,
+    },
 });

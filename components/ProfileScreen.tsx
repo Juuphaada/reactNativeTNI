@@ -4,6 +4,7 @@ import styles from '../styles/styles';
 
 const ProfileScreen = ():React.JSX.Element => {
     const profileImage = require("../assets/ไฟล์ 1 นิ้ว.jpg");
+    const profileImage2 = require("../assets/Screenshot 2023_09_11 095811.png");
 
   return (
     <View style={styles.container}>
@@ -11,6 +12,10 @@ const ProfileScreen = ():React.JSX.Element => {
             <Image source={profileImage} style={styles.profileImage}/>
             <Text style={styles.profileName}>Suphada Jaruprateepkul</Text>
 
+        </View>
+
+        <View style={styles.Image2Container}>
+            <Image source={profileImage2} style={styles.Image2}/>
         </View>
         
     </View>
