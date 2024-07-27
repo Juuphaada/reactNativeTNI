@@ -40,4 +40,9 @@ export default StyleSheet.create({
         backgroundColor:"white",
         marginTop:50,
     },
+
+    optionContainer:{
+        justifyContent: "space-around"
+        
+    }
 });

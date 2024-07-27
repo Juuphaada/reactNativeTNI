@@ -1,17 +1,35 @@
-import { View, Text , StyleSheet,Image} from 'react-native'
+import { View, Text , StyleSheet,Image, Button} from 'react-native'
 import React from 'react'
 import styles from '../styles/styles';
+import { useState } from 'react';
 
 const ProfileScreen = ():React.JSX.Element => {
     const profileImage = require("../assets/ไฟล์ 1 นิ้ว.jpg");
     const profileImage2 = require("../assets/Screenshot 2023_09_11 095811.png");
 
+    const [name,setName] = useState("Suphada Jaruprateepkul");
+    const handleChangeName = ()=>{
+        setName("New Name")
+    }
+    const [image,setImage] = useState(require("../assets/ไฟล์ 1 นิ้ว.jpg"));
+    const handleChangeImage = ()=>{
+        setImage(require("../assets/Screenshot 2023_09_11 095811.png"))
+    }
+
   return (
     <View style={styles.container}>
         <View style={styles.profileContainer}>
-            <Image source={profileImage} style={styles.profileImage}/>
-            <Text style={styles.profileName}>Suphada Jaruprateepkul</Text>
+            <Image source={image} style={styles.profileImage}/>
 
+            <View style={styles.optionContainer}>
+                <View>
+                    <Text style={styles.profileName}> {name} </Text>
+                    <Button title="change name " onPress={handleChangeName} />
+                </View>
+
+                <Button title="change image " onPress={handleChangeImage} />
+            </View>
+            
         </View>
 
         <View style={styles.Image2Container}>
