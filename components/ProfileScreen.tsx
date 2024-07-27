@@ -9,11 +9,11 @@ const ProfileScreen = ():React.JSX.Element => {
 
     const [name,setName] = useState("Suphada Jaruprateepkul");
     const handleChangeName = ()=>{
-        setName("New Name")
+        setName(name == "Suphada Jaruprateepkul" ? "New Name":"Suphada Jaruprateepkul")
     }
     const [image,setImage] = useState(require("../assets/ไฟล์ 1 นิ้ว.jpg"));
     const handleChangeImage = ()=>{
-        setImage(require("../assets/Screenshot 2023_09_11 095811.png"))
+        setImage(image == require("../assets/ไฟล์ 1 นิ้ว.jpg") ? require("../assets/Screenshot 2023_09_11 095811.png"):require("../assets/ไฟล์ 1 นิ้ว.jpg"));
     }
 
   return (
