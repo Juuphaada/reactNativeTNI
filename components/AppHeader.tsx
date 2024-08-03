@@ -1,20 +1,25 @@
-import { View, Text } from 'react-native'
+import {StyleSheet,View, Text } from 'react-native'
 import React from 'react'
+import { stylesPractice } from '../styles/AppStyles';
 
 type AppHeaderProps = {
-    title:string;
-    year? :number;
+    fullname: string;
+    message: string;
 }
 
-const AppHeader = ({title,year}:AppHeaderProps): React.JSX.Element => {
+const AppHeader = ({
+  fullname,
+  message
+}:AppHeaderProps): React.JSX.Element => {
   return (
-    <View>
-      <Text>
-        {title}
-        {year && year + 543 }
+    <View style={stylesPractice.header}>
+      <Text style={stylesPractice.headerText}>
+        Input your fullname: {fullname}
       </Text>
+      <Text style={stylesPractice.subtitleText}>{message}</Text>
     </View>
-  )
-}
+  );
+};
+
 
 export default AppHeader;

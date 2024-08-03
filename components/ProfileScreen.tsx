@@ -1,6 +1,6 @@
 import { View, Text , StyleSheet,Image, Button} from 'react-native'
 import React from 'react'
-import styles from '../styles/styles';
+import styles from '../styles/ProfileStyles';
 import { useState } from 'react';
 
 const ProfileScreen = ():React.JSX.Element => {
