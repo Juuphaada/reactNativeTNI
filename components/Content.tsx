@@ -4,11 +4,11 @@ import { stylesPractice } from '../styles/AppStyles';
 
 interface ContentProps {
   message: string;
-  fullname: string;
+  //fullname: string;
   onButtonClick:() => void;
 }
 
-const Content = ({ message, fullname, onButtonClick}: ContentProps):React.JSX.Element => {
+const Content = ({ message, onButtonClick}: ContentProps):React.JSX.Element => {
 /*
   const [displayFullname,setDisplayFullname] = React.useState('');
 
@@ -17,10 +17,6 @@ const Content = ({ message, fullname, onButtonClick}: ContentProps):React.JSX.El
     Alert.alert("Hello",`Input your fullname : ${fullname}`);
   };
 */
-
-  const onClickMe = () =>{
-    Alert.alert("Hello",fullname)
-  }
 
   return (
     <View style={stylesPractice.content}>
