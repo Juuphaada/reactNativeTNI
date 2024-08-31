@@ -7,12 +7,15 @@ import AxiosPostData from './components/AxiosPostData';
 import AxiosgetData from './components/AxiosgetData';
 import WeatherLondon from './components/WeatherLondon';
 import WeatherBangkok from './components/WeatherBangkok';
+import ModelExample from './components/ModelExample';
+import ModelPractice from './components/ModelPractice';
 
 
 const App = ():React.JSX.Element => {
   return (
     <View>
-      <WeatherBangkok/>
+      <ModelPractice/>
+      {/**<WeatherBangkok/>**/}
       {/**/}
       {/*<AxiosPostData/>
       <AxiosgetData/>*/}
