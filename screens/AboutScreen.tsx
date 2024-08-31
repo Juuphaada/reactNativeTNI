@@ -1,12 +1,12 @@
-import { Text, StyleSheet, Image} from 'react-native';​
-import React from 'react';​
+import { Text, StyleSheet, Image} from 'react-native';
+import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-​
-const AboutScreen = ({route}:any): React.JSX.Element => {​
+
+const AboutScreen = ({route}:any): React.JSX.Element => {
 
     const {companyName,companyId} = route.params;
 
-  return (​
+  return (
     <SafeAreaView>
         <Image
             source={require('..\assets\building.png')}
@@ -25,32 +25,31 @@ const AboutScreen = ({route}:any): React.JSX.Element => {​
     </SafeAreaView>
     
   );
-
 };
 
 export default AboutScreen;
 
-const styles = StyleSheet.create({​
+const styles = StyleSheet.create({
 
-    container: {​
+    container: {
   
-      flexDirection: "column",​
+      flexDirection: "column",
   
-      justifyContent: "center",​
+      justifyContent: "center",
   
-      alignItems: "center",​
+      alignItems: "center",
   
-    },​
+    },
   
-    myImage: {​
+    myImage: {
+
+      width: "100%",
   
-      width: "100%",​
+      height: 200,
   
-      height: 200,​
+      marginTop: 20,
   
-      marginTop: 20,​
-  
-    },​
+    },
     myImageNetwork: {
         width: 50,
         height: 50,

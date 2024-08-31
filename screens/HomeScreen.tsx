@@ -1,7 +1,8 @@
-import { View, Text, Button,StyleSheet} from 'react-native';​
-import React from 'react';​
+import { View, Text, Button,StyleSheet} from 'react-native';
+import React from 'react';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
-const HomeScreen = ({navigation,route}:any): React.JSX.Element => {​
+const HomeScreen = ({navigation,route}:any): React.JSX.Element => {
 
     const gotoAbout = () =>{
         navigation.navigate('About',{
@@ -10,32 +11,33 @@ const HomeScreen = ({navigation,route}:any): React.JSX.Element => {​
         });
     };
 
-    return (​
-        <View style={styles.container}>​
+    return (
+        <View style={styles.container}>
+            <MaterialIcon name="home" size={40} color='pink'/>
 
-        <Text style={styles.header}>HomeScreen</Text>​
+        <Text style={styles.header}>HomeScreen</Text>
   
-        <Button title="About us" onPress={gotoAbout} />​
+        <Button title="About us" onPress={gotoAbout} />
   
-        <View style={styles.postContainer}>​
+        <View style={styles.postContainer}>
   
-          <Button​
+          <Button
   
-            title="Create post"​
+            title="Create post"
   
-            onPress={() => navigation.navigate("CreatePost")}​
+            onPress={() => navigation.navigate("CreatePost")}
   
-          />​
+          />
   
-          <Text style={styles.postText}>​
+          <Text style={styles.postText}>
   
-            Post:​
+            Post:
   
-            <Text style={styles.postContent}> {route.params?.post}</Text>​
+            <Text style={styles.postContent}> {route.params?.post}</Text>
   
-          </Text>​
+          </Text>
   
-        </View>​
+        </View>
   
       </View>
       
@@ -45,46 +47,46 @@ const HomeScreen = ({navigation,route}:any): React.JSX.Element => {​
   
   export default HomeScreen;
 
-  const styles = StyleSheet.create({​
+  const styles = StyleSheet.create({
 
-    container: {​
+    container: {
   
-      padding: 20,​
+      padding: 20,
   
-    },​
+    },
   
-    header: {​
+    header: {
   
-      fontSize: 24,​
+      fontSize: 24,
   
-      fontWeight: "bold",​
+      fontWeight: "bold",
   
-    },​
+    },
   
-    postContainer: {​
+    postContainer: {
   
-      alignItems: "center",​
+      alignItems: "center",
   
-      justifyContent: "center",​
+      justifyContent: "center",
   
-      marginTop: 50,​
+      marginTop: 50,
   
-    },​
+    },
   
-    postText: {​
+    postText: {
   
-      margin: 10,​
+      margin: 10,
   
-      fontSize: 16,​
+      fontSize: 16,
   
-    },​
+    },
   
-    postContent: {​
+    postContent: {
   
       color: "blue", // เปลี่ยนสีข้อความที่ถูกส่งกลับมา​
   
-              fontWeight: "bold",​
+              fontWeight: "bold",
   
-    },​
+    },
   
   });

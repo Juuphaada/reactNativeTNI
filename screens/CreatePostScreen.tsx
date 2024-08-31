@@ -1,11 +1,11 @@
-import { View, Text, Button,StyleSheet, TextInput} from 'react-native';​
-import React from 'react';​
+import { View, Text, Button,StyleSheet, TextInput} from 'react-native';
+import React from 'react';
 
-const CreatePostScreen = ({navigation,route}:any): React.JSX.Element => {​
+const CreatePostScreen = ({navigation,route}:any): React.JSX.Element => {
 
     const [postText,setPostText] = React.useState("");
 
-    return (​
+    return (
       <>
         <TextInput
             multiline
