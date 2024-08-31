@@ -1,27 +1,20 @@
 import { View, Text, FlatList } from 'react-native'
-import React from 'react'
-import ProfileScreen from './components/ProfileScreen'
-import UseEffectExample from './components/UseEffectExample';
-import FlatListCallBackend from './components/FlastListcallBackend';
-import AxiosPostData from './components/AxiosPostData';
-import AxiosgetData from './components/AxiosgetData';
-import WeatherLondon from './components/WeatherLondon';
-import WeatherBangkok from './components/WeatherBangkok';
-import ModelExample from './components/ModelExample';
-import ModelPractice from './components/ModelPractice';
-
+import React from 'react';
+import HomeScreen from './screens/HomeScreen';
+import AboutScreen from './screens/AboutScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const App = ():React.JSX.Element => {
+  const HomeStack = createNativeStackNavigator();
   return (
-    <View>
-      <ModelPractice/>
-      {/**<WeatherBangkok/>**/}
-      {/**/}
-      {/*<AxiosPostData/>
-      <AxiosgetData/>*/}
-      {/*<ProfileScreen/>*/}
-      {/*<FlatListCallBackend/>*/}
-    </View>
+    <NavigationContainer>
+      <HomeStack.Navigator>
+        <HomeStack.Screen name='Home' component={HomeScreen}/>
+        <HomeStack.Screen name='About' component={AboutScreen}/>
+
+      </HomeStack.Navigator>
+    </NavigationContainer>
   )
 };
 
