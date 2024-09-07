@@ -10,44 +10,49 @@ const ModelPractice = (): React.JSX.Element => {
 
     return (
       <View style={styles.centeredView}>
-            <Pressable
-              style={[styles.button,styles.buttonOpen]}
-              onPress={()=> setLondonWeatherVisible(true)}
-            ></Pressable>
-            <Pressable
-              style={[styles.button,styles.buttonOpen]}
-              onPress={()=> setBangkokWeatherVisible(true)}
-            ></Pressable>
-     
-            
-    
-            <Modal
-                animationType="slide" transparent={true} visible={LondonWeatherVisible} onRequestClose={() => setLondonWeatherVisible(!LondonWeatherVisible)}>
-                <View style={styles.modalView}>
-                    <Text style={styles.modalText}>Hello React Native</Text>
-                    <Pressable
-                        style={[styles.button, styles.buttonOpen]}
-                        onPress={()=>setLondonWeatherVisible(!LondonWeatherVisible)} 
-                    >
-                        <Text style={styles.textStyle}>Hide Modal</Text>
-                    </Pressable>
-                </View>
-            </Modal>
+      <Text style={styles.HeaderText} >Weather App</Text> 
+          <Pressable
+          style={[styles.button,styles.buttonOpen]}
+          onPress={()=> setLondonWeatherVisible(true)}
+          >
+            <Text style={styles.textStyle}>London</Text> 
+          </Pressable>
 
-            <Modal
-                animationType="slide" transparent={true} visible={BangkokWeatherVisible} onRequestClose={() => setLondonWeatherVisible(!BangkokWeatherVisible)}>
-                <View style={styles.modalView}>
-                    <Text style={styles.modalText}>Hello React Native</Text>
-                    <Pressable
-                        style={[styles.button, styles.buttonOpen]}
-                        onPress={()=>setBangkokWeatherVisible(!BangkokWeatherVisible)} 
-                    >
-                        <Text style={styles.textStyle}>Hide Modal</Text>
-                    </Pressable>
-                </View>
-            </Modal>
+        <Pressable
+        style={[styles.button,styles.buttonOpen]}
+        onPress={()=> setBangkokWeatherVisible(true)}
+        >
+          <Text style={styles.textStyle}>Bangkok</Text> 
+        </Pressable>
+
+        <Modal animationType="slide" transparent={true} visible={LondonWeatherVisible} onRequestClose={() => setLondonWeatherVisible(!LondonWeatherVisible)}>
+          <View style={styles.modalView}>   
+            <WeatherLondon/>
+            <Pressable
+                    style={[styles.button, styles.buttonClose]}
+                    onPress={()=>setLondonWeatherVisible(!LondonWeatherVisible)} 
+            >
+              <Text style={styles.textStyle}>Hide Modal</Text>
+            </Pressable>
+          </View>
+        </Modal>
+
+        <Modal animationType="slide" transparent={true} visible={BangkokWeatherVisible} onRequestClose={() => setBangkokWeatherVisible(!BangkokWeatherVisible)}>
+          <View style={styles.modalView}>
+            <WeatherBangkok/>
+            <Pressable
+                    style={[styles.button, styles.buttonClose]}
+                    onPress={()=>setBangkokWeatherVisible(!BangkokWeatherVisible)} 
+            >
+              <Text style={styles.textStyle}>Hide Modal</Text>
+            </Pressable>
+          </View>
+        </Modal>
+  
       </View>
-      );
+      
+    );
+    
 }
  
 export default ModelPractice;
@@ -62,13 +67,13 @@ const styles = StyleSheet.create({
   },
  
   modalView: {
-    margin: 50,
- 
+    margin: 30,
     backgroundColor: "white",
  
-    borderRadius: 20,
+    borderRadius: 10,
  
-    padding: 35,
+    padding: 10,
+    paddingBottom: 100,
  
     alignItems: "center",
     shadowColor: "#000",
@@ -83,14 +88,16 @@ const styles = StyleSheet.create({
  
     shadowRadius: 4,
  
-    elevation: 5,
+    elevation: 50, // เมื่อป้ายmodelโผล่มา ข้างหลังจะเป็นเงายิ่งค่ามากยิ่งมืด
   },
   button: {
     borderRadius: 20,
  
     padding: 10,
  
-    elevation: 2,
+    elevation: 5,
+
+    margin: 10,
   },
  
   buttonOpen: {
@@ -112,6 +119,11 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
  
+    textAlign: "center",
+  },
+
+  HeaderText:{
+    fontWeight: "bold",
     textAlign: "center",
   },
 });

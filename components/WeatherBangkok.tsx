@@ -7,7 +7,7 @@ import {
   } from "react-native";
   import React, { useEffect, useState } from "react";
   import axios from "axios";
-  import { styleWeatherBangkok } from "../styles/styleWeatherBangkok";
+  import { styleWeatherBangkok } from "../styles/styleWeather";
   
   interface WeatherState {
     data: any;

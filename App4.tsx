@@ -15,8 +15,9 @@ import AboutScreen from './screens/AboutScreen';
 const App = ():React.JSX.Element => {
   return (
     <View>
-      <AboutScreen/>
-      {/**<ModelPractice/>}
+      <ModelPractice/>
+      {/*<ModelExampleModelPractice/>}
+      {/**<AboutScreen/>}
       {/**<WeatherBangkok/>**/}
       {/**/}
       {/*<AxiosPostData/>

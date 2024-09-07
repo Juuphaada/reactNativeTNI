@@ -283,11 +283,12 @@ const styleAxiospostData = StyleSheet.create({
 
 const styleWeatherLondon = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 16,
-    backgroundColor: "#f5f5f5",
-  },
+    backgroundColor: '#f5f5f5',
+    marginTop:50
+},
   centeredContainer: {
     justifyContent: "center",
     alignItems: "center",
@@ -351,10 +352,11 @@ const styleWeatherLondon = StyleSheet.create({
 });
 const styleWeatherBangkok = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 16,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: '#f5f5f5',
+    marginTop:50
   },
   centeredContainer: {
     justifyContent: "center",
