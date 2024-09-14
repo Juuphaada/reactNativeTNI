@@ -25,6 +25,7 @@ const MenuScreen = ({ navigation }: any): React.JSX.Element => {
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
+        
         <ListItem onPress={()=> {navigation.navigate('ProductStack')}} >
           <Icon
             name="star"

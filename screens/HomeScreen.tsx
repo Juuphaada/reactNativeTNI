@@ -21,6 +21,7 @@ const HomeScreen = (): React.JSX.Element => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "หน้าหลัก",
+      headerStyle: { backgroundColor: "#35a8ea" },
       headerTitle: () => <AppLogo />,
       headerTitleAlign: "center",
       headerLeft:()=>(
@@ -52,6 +53,7 @@ const HomeScreen = (): React.JSX.Element => {
             companyId:100
         });
     };
+    // 'About' App.tsx, <HomeStack.Screen, name="About"
 
     return (
       <View style={styles.container}>

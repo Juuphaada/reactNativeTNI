@@ -13,6 +13,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
+import DetailScreen from "./screens/DetailScreen";
+
 const HomeStack = createNativeStackNavigator();
 const ProductStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -30,6 +32,7 @@ function HomeStackScreen(){
       <HomeStack.Screen
         name="Home"
         component={HomeScreen}
+        // option อยู่ที่ไฟล์  HomeScreen.tsx
       />
       <HomeStack.Screen
         name="About"
@@ -57,6 +60,10 @@ function ProductStackScreen() {
       <ProductStack.Screen 
         name="Products"
         component={ProductScreen}
+      />
+      <ProductStack.Screen 
+        name="Detail"
+        component={DetailScreen}
       />
     </ProductStack.Navigator>
   );
