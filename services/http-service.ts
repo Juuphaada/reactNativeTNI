@@ -1,8 +1,10 @@
-import axios, {AxiosResponse,AxiosError} from "axios";
-//create intance 
+import axios,{AxiosResponse,AxiosError} from "axios";
+
+//create instance
 const http = axios.create({
-    headers:{'Content-Type':'application/json'} //ทุก request ที่ ผ่าน instant นี้ ต้องเป็น type json
+    headers:{'Content-Type':'application/json'}
 });
 
 export {http};
+
 export type {AxiosResponse,AxiosError};

@@ -13,6 +13,7 @@ import { FlatList } from "react-native-gesture-handler";
 import { ListItem, Avatar } from '@rneui/themed';
 import { Badge } from "@rneui/base";
 import { ActivityIndicator } from "react-native";
+import { StyleSheet } from "react-native";
 
 const MaterialHeaderButton = (props: any) => (
   // the `props` here come from <Item ... />
@@ -25,11 +26,11 @@ const ProductScreen = (): React.JSX.Element => {
   const navigation = useNavigation<any>();
   //1. กำหนด state
   const [product,setProduct] = useState<any[]>([]);
-  const [loading,setLoading] = useState<boolean>(false); 
+  const [loading,setLoading] = useState<boolean>(true); 
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: "Product",
+      headerTitle: () => <Text>Product</Text>,
       headerTitleAlign: "center",
       headerLeft: () => (
         <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
@@ -62,14 +63,17 @@ const ProductScreen = (): React.JSX.Element => {
 
   // usefocusEffect ถูกใช่เมื่อไป focus หน้าที่เราเลือก และมักใช้ร่วมกับ useCallback ใช้บันทึกข้อมูลที่ทำงานอยู่ ซึ่งทำได้ app ทำงานได้เร็วขึ้น
   useFocusEffect(
-    useCallback(()=>{
+    React.useCallback(()=>{
       getProduct();// เมื่อ rerenderปุบ จะใช้ funtion นี้
     },[]) 
   );
 
+  
   if(loading){
     return(
-      <ActivityIndicator size="large" color = "blue"/>
+      <View style={styles.centered}>
+        <ActivityIndicator size="large" color="#d1aaee" />
+      </View>
     )
   };
 
@@ -116,3 +120,14 @@ const ProductScreen = (): React.JSX.Element => {
 };
 
 export default ProductScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 50,
+  },
+  centered: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+  
