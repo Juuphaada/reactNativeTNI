@@ -16,7 +16,7 @@ const MaterialHeaderButton = (props:any) =>(
 )
 
 const HomeScreen = (): React.JSX.Element => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<any>(); // navigation object ที่เราสามารถใช้เพื่อจัดการกับการน าทาง เช่น การน าทางไปยังหน้าจออื่นๆ
 
   useLayoutEffect(() => {
     navigation.setOptions({
