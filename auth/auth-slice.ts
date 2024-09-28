@@ -6,13 +6,14 @@ import type { RootState } from '../redux-toolkit/store';
 interface AuthState {
   isLogin:boolean;
   isLoading:boolean;
-  //profile: any<null>;
+  profile:any|null;
 }
 
 // Define the initial state using that type
 const initialState: AuthState = {
   isLogin:false,
-  isLoading:false
+  isLoading:false,
+  profile:null,
 }
 
 export const authSlice = createSlice({
@@ -25,14 +26,14 @@ export const authSlice = createSlice({
     },
     setIsLoading(state,action:PayloadAction<any|null>){
         state.isLoading = action.payload; //update global state
-    }
-    setIsP(state,action:PayloadAction<any|null>){
-        state.isLoading = action.payload; //update global state
+    },
+    setProfile(state,action:PayloadAction<any|null>){
+        state.profile = action.payload; //update global state
     }
   },
 })
 
-export const {setIsLoading,setIsLogin } = authSlice.actions
+export const {setIsLoading,setIsLogin,setProfile } = authSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectAuthState = (state: RootState) => state.authState;

@@ -7,12 +7,15 @@ import { useForm, Controller } from 'react-hook-form';
 import { login } from '../services/auth-servise';
 import { AxiosError } from '../services/http-service';
 import Toast from 'react-native-toast-message';
+import { setIsLogin } from '../auth/auth-slice';
+import { useAppDispatch } from '../redux-toolkit/hooks';
 
 
 const LoginScreen = (): React.JSX.Element => {
 
   // สร้าง state สำหรับควบคุมการแสดงผลรหัสผ่าน​
    const [showPassword, setShowPassword] = useState(false);
+   const dispatch = useAppDispatch();
 
     // 1.define validation with yub schema
     const schema = yup.object().shape({
@@ -42,7 +45,8 @@ const LoginScreen = (): React.JSX.Element => {
         try {
             const response = await login(data.email, data.password);
             if (response.status === 200) {
-              Toast.show({type:'success',text1:'Login Success'})
+                dispatch(setIsLogin(true));
+              //Toast.show({type:'success',text1:'Login Success'})
              // console.log("login success");
             }
           } catch (error: any) {
